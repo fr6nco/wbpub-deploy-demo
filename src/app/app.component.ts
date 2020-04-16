@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     console.log(this.urlInput.nativeElement.value);
 
     this.loading = true;
-    // curl -v http://localhost:8000/fetchurl -H "Content-type: application/json" --data '{"url": "https://www.sme.sk/rss-title"}'
+    //  curl -v http://localhost:8000/fetchurl -H "Content-type: application/json" --data '{"url": "https://www.sme.sk/rss-title"}'
 
     this.http
       .post("http://webp.itprof.sk:8000/fetchurl", {
