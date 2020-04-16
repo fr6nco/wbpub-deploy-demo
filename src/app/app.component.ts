@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     //  curl -v http://localhost:8000/fetchurl -H "Content-type: application/json" --data '{"url": "https://www.sme.sk/rss-title"}'
 
     this.http
-      .post("http://webp.itprof.sk:8000/fetchurl", {
+      .post('https://webp.itprof.sk/fetchurl', {
         url: this.urlInput.nativeElement.value,
       },
       {
