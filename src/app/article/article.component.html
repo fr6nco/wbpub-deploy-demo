@@ -1,0 +1,16 @@
+
+ <div class="text-left">
+  <h1>{{article.title}}</h1>
+  <img [src]="article.image"/>
+  <div class="row">
+      <p>
+        Publication Date: {{article.pubDate}}
+      </p>
+      <p>
+        Description: {{article.description}}
+      </p>
+      <p>
+          Full article <a target="_blank" [href]="article.link">Link</a>
+      </p>
+  </div>
+</div>
