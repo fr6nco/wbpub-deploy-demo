@@ -32,8 +32,8 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         target_branch: master
-        name: dist
-        path: dist
+        name: docs
+        path: docs
 
     - name: Deploy
       if: success()
