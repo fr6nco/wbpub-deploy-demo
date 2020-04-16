@@ -18,6 +18,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -26,3 +27,18 @@ jobs:
     - run: npx ng build --prod
       env:
         CI: true
+
+    - name: Save artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: dist
+        path: dist
+
+    - name: Deploy
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+        target_branch: master
+        build_dir: dist/rssFe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
